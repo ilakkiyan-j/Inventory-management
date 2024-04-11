@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-right: 10px; /* Add spacing between h1 and img */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Added to vertically center items */
+
+}
+
+
+
+
+
+.search-bar form {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.search-bar input[type="number"] {
+    margin-right: 10px; /* Adjust margin to create space between input and button */
+}
+
+.search-bar button {
+    background-color: #007bff; /* Change button background color */
+    color: white; /* Change button text color */
+    border: none;
+    padding: 8px 16px; /* Adjust padding for button */
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Change button background color on hover */
+}
+.container {
+    margin: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+form {
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="number"], select {
+    padding: 8px;
+    width: 100%;
+}
+button{
+    padding: 8px 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin: 20px auto;
+      border-radius:20px;
+}
+
+.Common{
+background-color: #0492C2;
+}
+
+.Common:hover{
+     background-color: rgb(0,0,100);
+     opacity:3px;
+}
+
+
+.Login {
+    width: 50px;
+      height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/128/15532/15532209.png');
+        background-size: cover;
+
+}
+
+
+
+#addProductButton{
+   border-radius:20px;
+}
+
+#inventoryInfo{
+color:#fff;
+}
+.deleteButton{
+ background-color: #9b111e;
+}
+
+.deleteButton:hover{
+      background-color: rgb(150,0,0);
+}
+#Edit,editz{
+     width:80px;
+}
+
+
+input[type="number"]{
+
+         width:50%;
+         margin-left:500px;
+         justify-content:center;
+}
+
+
+
+#searchButton{
+     margin-right:400px
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: #fff; /* Set white background for table */
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: #ffffff; /* Set white background for table cells */
+    color: #000000; /* Set black text color */
+}
+
+th {
+    text-align: left;
+}
+
+thead  {
+    background-color: #55608f;
+}
+th{
+background-color:
+color: #000000;
+}
+
+.SelectedProduct{
+justify-content:center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+}
+
+.card p {
+    margin: 10px 0;
+}
+.card form {
+    justify-content:centre;/* Change display to block for vertical alignment */
+    align-items:center;
+}
+
+.card button {
+    /* Change display to block for vertical alignment */
+    padding: 8px 16px;
+
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+

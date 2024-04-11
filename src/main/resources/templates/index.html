@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/7656/7656409.png" type="image/x-icon">
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <h1>Inventory Management System</h1>
+    </div>
+    <a class="Login" href="#"></a>
+</header>
+<div class="search-bar" th:if="${FindProduct == null}">
+    <form action="/main/search" method="GET">
+        <input type="number" id="Search" name="id" placeholder="Enter Product Id..">
+        <button class="Common" id="searchButton" type="submit">Search</button>
+    </form>
+</div>
+<a th:if="${FindProduct == null}" style="text-decoration:none" href="/main/edit"> <button class="Common" id="addProductButton">Add Product</button></a>
+
+<table class="table">
+    <thead>
+    <tr th:if="${FindProduct == null}" >
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through products and display them -->
+    <tr th:each="product : ${products}">
+        <td th:text="${product.product_id}"></td>
+        <td th:text="${product.product_name}"></td>
+        <td th:text="${product.category}"></td>
+        <td th:text="${product.product_description}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.quantity}"></td>
+        <td>
+
+            <form th:action="@{/main/edit}" method="GET">
+                <input type="hidden" name="id" th:value="${product.product_id}" />
+                <button class="Common" type="submit" id="Edit">Edit</button>
+            </form>
+
+            <form th:action="@{'/main/' + ${product.product_id}}" th:method="delete">
+                <button type="submit" class="deleteButton" >Delete</button>
+            </form>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!-- product Find -->
+<div class="container" th:if="${FindProduct != null}">
+<div class="card" th:if="${FindProduct != null}">
+   <h1> <legend>Selected Product</legend></h1>
+    <p>Product ID: <span th:text="${FindProduct.product_id}"></span></p>
+    <p>Product Name: <span th:text="${FindProduct.product_name}"></span></p>
+    <p>Category: <span th:text="${FindProduct.category}"></span></p>
+    <p>Description: <span th:text="${FindProduct.product_description}"></span></p>
+    <p>Price: <span th:text="${FindProduct.price}"></span></p>
+    <p>Quantity: <span th:text="${FindProduct.quantity}"></span></p>
+   <p>
+    <form th:action="@{/main/edit}" method="GET">
+        <input type="hidden" name="id" th:value="${FindProduct.product_id}" />
+        <button class="Common" type="submit" id="editz">Edit</button>
+    </form>
+
+        <form th:action="@{'/main/' + ${FindProduct.product_id}}" th:method="delete">
+            <button type="submit" class="deleteButton">Delete</button>
+        </form>
+       <form th:action="@{'/main'}" >
+           <button type="submit"  class="Common">Back</button>
+       </form>
+    </p>
+</div>
+</div>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>
+

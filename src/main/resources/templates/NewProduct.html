@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="/css/NewProduct.css"/>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/679/679922.png" type="image/x-icon">
+
+</head>
+<body>
+<h2>Add / Edit Product</h2>
+<form action="/main" method="post" th:object="${product}" th:method="put">
+
+    <input th:if="${product.product_id != null}" type="hidden"  id="productId"  th:field="*{product_id}"><br>
+
+    <label for="productName">Product Name:</label><br>
+    <input type="text" id="productName" name="productName" th:field="*{product_name}"><br>
+
+    <label for="productDescription">Product Description:</label><br>
+    <textarea id="productDescription" name="productDescription" th:field="*{product_description}"></textarea><br>
+
+    <label for="category">Category:</label><br>
+    <input type="text" id="category" name="category" th:field="*{category}"><br>
+
+    <label for="price">Price:</label><br>
+    <input type="number" id="price" name="price" th:field="*{price}"><br>
+
+    <label for="quantity">Quantity:</label><br>
+    <input type="number" id="quantity" name="quantity" th:field="*{quantity}"><br>
+
+
+    <button type="submit"> Apply </button>
+</form>
+<script th:src="@{/NewProduct.js}"></script>
+</body>
+</html>
